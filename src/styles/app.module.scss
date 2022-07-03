@@ -1,0 +1,129 @@
+.mainContainer {
+  height: calc(100vh - 12.5rem);
+  max-width: 46rem;
+  width: 100%;
+  margin: 0 auto;
+
+  form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: -1.75rem;
+
+    input {
+      flex: 1;
+      background: var(--gray-500);
+      border: 1px solid var(--gray-700);
+      border-radius: 8px;
+      padding: 1rem;
+      color: var(--gray-100);
+
+      &:focus {
+        outline: transparent;
+        box-shadow: 0 0 0 2px var(--purple-700);
+      }
+    }
+
+    button {
+      color: var(--gray-100);
+      background: var(--blue-700);
+      border: none;
+      border-radius: 8px;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &:hover:not(:disabled) {
+        background: var(--blue-500);
+      }
+
+      &:disabled {
+        opacity: 0.8;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.toDosContainer {
+  margin-top: 4rem;
+}
+
+.toDosHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    & > strong {
+      font-size: 0.875rem;
+      color: var(--blue-500);
+    }
+  }
+
+  & > div:last-child {
+    strong {
+      color: var(--purple-500);
+    }
+  }
+}
+
+.counter {
+  font-size: 0.75rem;
+  background: var(--gray-400);
+  border-radius: 999px;
+  padding: 2px 8px;
+  line-height: 1.6;
+}
+
+.emptyToDosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 4rem 1.5rem;
+  align-items: center;
+  color: var(--gray-300);
+  border-top: 1px solid var(--gray-400);
+
+  svg {
+    opacity: 0.5;
+  }
+}
+
+.toDosList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 338px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: block;
+    background: transparent;
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--purple-500);
+    border-radius: 4px;
+  }
+}
+
+@media screen and (max-width: 665px) {
+  .mainContainer {
+    padding: 0 1rem;
+  }
+
+  .counter {
+    line-height: 1.4;
+  }
+}
